@@ -93,7 +93,7 @@ etf_data_merged = pd.merge(
     validate="m:1"          
 )
 
-
+###regression###
 reg_data = etf_data_merged.dropna(subset=["overnight_return", "overnight_return_stock"]).copy()
 
 y = reg_data["overnight_return"]
@@ -104,3 +104,23 @@ x = sm.add_constant(x)
 model = sm.OLS(y, x).fit()
 
 print(model.summary())
+
+####2021~2023y####
+reg_data_2021_2023 = reg_data[(reg_data["date"] >= "2021-01-01") & (reg_data["date"] <= "2023-12-31")].copy()
+y_2021_2023 = reg_data_2021_2023["overnight_return"]
+x_2021_2023 = reg_data_2021_2023["overnight_return_stock"]
+x_2021_2023 = sm.add_constant(x_2021_2023)
+model_2021_2023 = sm.OLS(y_2021_2023, x_2021_2023).fit()
+print(model_2021_2023.summary())
+
+#### 2024~now ####
+reg_data_2024_now = reg_data[reg_data["date"] >= "2024-01-01"].copy()
+y_2024_now = reg_data_2024_now["overnight_return"]
+x_2024_now = reg_data_2024_now["overnight_return_stock"]
+x_2024_now = sm.add_constant(x_2024_now)
+model_2024_now = sm.OLS(y_2024_now, x_2024_now).fit()
+print(model_2024_now.summary())
+
+
+#不划算，2021至2023的偏誤可能還明顯一點點，但我猜確實隨著etf越來越成熟，偏誤也越來越不明顯QQ
+
