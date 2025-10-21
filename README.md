@@ -1,3 +1,7 @@
+參考paper：ETFs’ high overnight returns: The early liquidity provider gets the worm
+
+Journal of Financial Markets 52 (2021)
+
 比較ETF本身與成分股的overnight，觀察是否具有偏誤（成分股無法解釋的成分高）
 
 結果低到靠杯XD???
