@@ -3,8 +3,8 @@
 Journal of Financial Markets 52 (2021)
 
 比較ETF本身與成分股的overnight，觀察是否具有偏誤（成分股無法解釋的成分高）
-
-結果低到靠杯XD???
+截距項有3.9bps跟4bps 好爽哈
+要考慮到吃不吃的到偏誤，避險勒???
 
 Sample:上市國內成分股etf
 
