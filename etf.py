@@ -122,5 +122,9 @@ model_2024_now = sm.OLS(y_2024_now, x_2024_now).fit()
 print(model_2024_now.summary())
 
 
-#不划算，2021至2023的偏誤可能還明顯一點點，但我猜確實隨著etf越來越成熟，偏誤也越來越不明顯QQ
+#2021至2023的偏誤可能還明顯一點點，但我猜確實隨著etf越來越成熟
+#喔喔喔喔!!!我忘記截距項作者有轉成bps!!!!只要是顯著的都可以再做看看!!
+#真的是4bps 哇!!! beta:etf overnight 漲1%，成分股overnight 漲 0.89%
 
+print("2021-2023 Intercept (bps):", model_2021_2023.params['const'] * 10000)
+print("2024-now Intercept (bps):", model_2024_now.params['const'] * 10000)
